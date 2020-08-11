@@ -1,7 +1,7 @@
 # Website-Blocker to stay focused!
 A simple Blocker!
 Blocks the following sites:
-  facebook.com
+   - www.facebook.com
    - www.twitter.com
    - www.nicefarts.io
    - www.facebook.com
