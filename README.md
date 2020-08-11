@@ -1,5 +1,5 @@
 # DimiHero
-Lots of useful stuff. Wink Wink!
+
 
 # USACO
  - For the USACO, you MUST add fstream and freopen for the code to work on usaco.org! 
