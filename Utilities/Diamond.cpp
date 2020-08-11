@@ -8,11 +8,12 @@
 #include <fstream>
 using namespace std;
 int main(){
+    int x;
+    cin >> x;
     for(;;){
         int star;
         star = 0;
-        int x;
-        cin >> x;
+        
         int counter = 1;
         for (int linenum = 0; linenum < x; linenum++) {
             for(int u = 0; u<x-linenum; u++){
