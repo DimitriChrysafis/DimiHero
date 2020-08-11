@@ -17,7 +17,7 @@
 
 4. Pryamid Drawer(you need to input how many lines you want there to be)
 
-5. Program to find the factors of a given number.
+5. Program to find the factors of a given number.(not prime factors, ALL factors)
 
 6. Find the repeated words in a block of texts.
 
