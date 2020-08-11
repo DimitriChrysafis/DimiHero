@@ -1,12 +1,12 @@
 # DimiHero
 Lots of useful stuff. Wink Wink!
 
-### USACO
+# USACO
  - For the USACO, you MUST add fstream and freopen for the code to work on usaco.org! 
  - However, if you are inputting it onto a site such as http://lms.alphastar.academy/ you don't need that extra code.
  - DO NOT copy the code and call it yours.
  
-### Utilities
+# Utilities
  - Here, you can find many things that can help you such as.
 
 1. Calculator
@@ -38,10 +38,10 @@ How to use?
 
 2. Paste the code, and click run.
 
-### CodeForces
+# CodeForces
  - Here you just find all my solutions to the site http://codeforces.com/
  
-### WebsiteBlocker
+# WebsiteBlocker
 A simple Blocker!
 Blocks the following sites:
    - www.facebook.com
