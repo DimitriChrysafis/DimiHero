@@ -8,8 +8,6 @@
 #include <fstream>
 using namespace std;
 int main(){
-    freopen("word.in", "r", stdin);
-    freopen("word.out", "w", stdout);
     long long numofwords;
     long long index;
     cin >> numofwords;
