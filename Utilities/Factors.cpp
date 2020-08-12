@@ -15,7 +15,7 @@ int main(){
 
        cout << "Enter a positive integer: ";
        cin >> n;
-       long long counter = 0;
+       long long counter = 1;
        cout << "Factors of " << n << " are: " << endl;
        for(i = 1; i <= n; ++i){
            if(n % i == 0){
@@ -24,8 +24,9 @@ int main(){
                counter++;
            }
        }
-    cout << "The Numnber Of Factors is: " << counter << endl;
-    }else{
+    cout << "The Numnber Of Factors is: " << counter -1<< endl;
+        return 0;
+    }if(pp == 'p'){
     long long Number, p = 1, j, d, c = 0;
       cout << "Enter a positive integer: " << endl;
         cin >> Number;
@@ -48,6 +49,10 @@ int main(){
            p++;
        }
     cout << "Total number of prime factors is " << c << endl;
+           return 0;
     }
-       return 0;
+    else{
+        cout << "no dummy, re-run the program, " << pp << " is not either a p or an f." << endl;
+        return 0;
+    }
 }
