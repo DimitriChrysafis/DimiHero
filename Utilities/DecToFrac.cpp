@@ -8,6 +8,9 @@
 #include <stdlib.h>
 #include <time.h>
 using namespace std;
+//
+// This is a test code, for fun!
+//
 int main(){
     float x;
     cin >> x;
