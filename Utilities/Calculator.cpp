@@ -79,8 +79,6 @@
         cout << endl;
         cout <<   "'11' for finding the divisors";
         cout << endl;
-        cout << "'12' for finding the area of an n-gon given its coordinates";
-        cout << endl;
         cout <<  "YOU MUST PRESS ENTER AFER TYPING EVERY NUMBER!!!" << endl;
         string i;
         cin >> i;
