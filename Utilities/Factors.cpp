@@ -40,7 +40,8 @@ int main(){
                    j++;
                }
                if(d == 2){
-                   cout << "A prime factor is " << p << endl;
+                   cout << "One prime factor is " << p << endl;
+                       this_thread::sleep_for(chrono::milliseconds(10) );
                    c++;
                }
            }
