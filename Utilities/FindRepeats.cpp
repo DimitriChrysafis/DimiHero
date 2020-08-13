@@ -15,7 +15,7 @@ void removeCommas(string& str1, int len){
     }
         else{
             str1[j] = str1[i];
-            j++;
+            j++; 
         }
     }
 str1[j] = '\0';
