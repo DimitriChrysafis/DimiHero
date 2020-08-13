@@ -5,9 +5,41 @@
 #include <chrono>
 #include <thread>
 #include <map>
+#include <algorithm>
 using namespace std;
+void removeCommas(string& str1, int len){
+    int j = 0;
+    for (int i = 0; i < len; i++){
+        if (str1[i] == ','){
+            continue;
+    }
+        else{
+            str1[j] = str1[i];
+            j++;
+        }
+    }
+str1[j] = '\0';
+}
+void removePeriod(string& str1, int len){
+    int j = 0;
+    for (int i = 0; i < len; i++){
+        if (str1[i] == ','){
+            continue;
+        }
+        else{
+            str1[j] = str1[i];
+            j++;
+        }
+    }
+
+    str1[j] = '\0';
+}
 int main(){
      string stre("Paste text here");
+    transform(stre.begin(), stre.end(), stre.begin(), ::tolower);
+      long long int i = stre.length();
+    removePeriod(stre,i);
+    removeCommas(stre,i);
     string scooby;
     istringstream bob(stre);
     map<string, size_t> occurrences;
