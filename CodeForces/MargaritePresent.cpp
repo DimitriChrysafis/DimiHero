@@ -6,26 +6,31 @@
 #include <thread>
 #include <map>
 #include <cmath>
+#include <algorithm>
 using namespace std;
-void lool(int p, int r, int counter){
-    for(int i = p; i < r+1; i++){
-        counter += i * pow(-1,i);
-    }
-        cout << counter << endl;
-}
 int main(){
-    int x;
-    cin >> x;
-    int arr[x];
-    int arrs[x];
-    int counter = 0;
-    for(int i = 0; i < x; i++){
-        cin >> arr[i];
-        cin >> arrs[i];
-    }
-    for(int i = 0; i < x; i++){
-        lool(arr[i], arrs[i], counter);
-        counter = 0;
-    }
+    int numberof;
+       cin >> numberof;
+    for(int i = 0 ; i < numberof ; i++){
+        int roof;
+        int floor;
+        cin >> roof;
+        cin >> floor;
+           if(floor-roof == 1){
+               cout << "-1" <<endl;
+           }
+           else if(roof % 2 ==0 and floor % 2 ==0){
+               cout << (roof + floor ) / 2 <<endl;
+           }
+           else if(roof % 2 != 0 and floor % 2 != 0){
+               cout << - ( roof + floor ) / 2 <<endl;
+           }
+           else if( roof % 2 != 0  and floor % 2 == 0){
+               cout << (floor - roof + 1 ) / 2 <<endl;
+           }
+           else if(roof % 2== 0 and floor % 2 !=0){
+               cout << - ( floor - roof + 1 )/2<<endl;
+           }
+       }
     return 0;
 }
