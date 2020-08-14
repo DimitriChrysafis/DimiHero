@@ -27,7 +27,7 @@ cin >> t;
          cout << "NO" << endl;
      }
      else {
-         Cout << "Yes" << endl;
+         cout << "Yes" << endl;
      }
  }
 }
