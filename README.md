@@ -3,7 +3,7 @@
 
 # USACO
  - For the USACO, you MUST add fstream and freopen for the code to work on [USACO](usaco.org)! 
- - However, if you are inputting it onto a site such as [AlphaStar's LMS] (http://lms.alphastar.academy/) you don't need that extra code.
+ - However, if you are inputting it onto a site such as [AlphaStar's LMS] (lms.alphastar.academy/) you don't need that extra code.
  - DO NOT copy the code and call it yours.
  
 # Utilities
@@ -34,7 +34,7 @@
 
 How to use?
 
-1. Get a c++ compiler(you can use online ones such as http://cpp.sh/)
+1. Get a c++ compiler(you can use online ones such as [this one](http://cpp.sh/))
 
 2. Paste the code, and click run.
 
