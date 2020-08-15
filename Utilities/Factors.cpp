@@ -11,7 +11,7 @@
 using namespace std;
 int countDivisors(ll n){
     ll cnt = 0;
-    for (int i = 1; i <= sqrt(n); i++) {
+    for (ll i = 1; i <= sqrt(n); i++) {
         if (n % i == 0) {
             if (n / i == i){
                 cnt++;
@@ -34,7 +34,7 @@ int main(){
 
        cout << "Enter a positive integer: ";
        cin >> n;
-        if(x > 9999999999999999){
+        if(n > 9999999999999999){
                    cout << "please input a smaller number";
                    cout << endl;
                    return 0;
@@ -54,7 +54,7 @@ int main(){
     ll Number, p = 1, j, d, c = 0;
       cout << "Enter a positive integer: " << endl;
         cin >> Number;
-        if(x > 9999999999999999){
+        if(Number > 9999999999999999){
                    cout << "please input a smaller number";
                    cout << endl;
                    return 0;
