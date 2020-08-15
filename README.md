@@ -3,7 +3,7 @@
 
 # USACO
  - For the USACO, you MUST add fstream and freopen for the code to work on [USACO](usaco.org)! 
- - However, if you are inputting it onto a site such as http://lms.alphastar.academy/ you don't need that extra code.
+ - However, if you are inputting it onto a site such as [AlphaStar's LMS] (http://lms.alphastar.academy/) you don't need that extra code.
  - DO NOT copy the code and call it yours.
  
 # Utilities
@@ -39,7 +39,7 @@ How to use?
 2. Paste the code, and click run.
 
 # CodeForces
- - Here you just find all my solutions to the site http://codeforces.com/
+ - Here you just find all my solutions to the site [Codeforces](http://codeforces.com/)
  
 # WebsiteBlocker
 A simple Blocker!
