@@ -36,7 +36,7 @@ void removePeriod(string& str1, int len){
     str1[j] = '\0';
 }
 int main(){
-    string stre "dfd";
+    string stre = "Paste Text Here";
     transform(stre.begin(), stre.end(), stre.begin(), ::tolower);
       unsigned long long int i = stre.length();
     removePeriod(stre,i);
