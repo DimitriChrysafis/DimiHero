@@ -6,23 +6,24 @@
 #include <thread>
 #include <map>
 #include <algorithm>
+#include <fstream>
 using namespace std;
 void removeCommas(string& str1, int len){
-    int j = 0;
-    for (int i = 0; i < len; i++){
+    unsigned long long int j = 0;
+    for (unsigned long long int i = 0; i < len; i++){
         if (str1[i] == ','){
             continue;
     }
         else{
             str1[j] = str1[i];
-            j++; 
+            j++;
         }
     }
 str1[j] = '\0';
 }
 void removePeriod(string& str1, int len){
-    int j = 0;
-    for (int i = 0; i < len; i++){
+    unsigned long long int j = 0;
+    for (unsigned long long int i = 0; i < len; i++){
         if (str1[i] == ','){
             continue;
         }
@@ -35,9 +36,9 @@ void removePeriod(string& str1, int len){
     str1[j] = '\0';
 }
 int main(){
-     string stre("Paste text here");
+    string stre "dfd";
     transform(stre.begin(), stre.end(), stre.begin(), ::tolower);
-      long long int i = stre.length();
+      unsigned long long int i = stre.length();
     removePeriod(stre,i);
     removeCommas(stre,i);
     string scooby;
