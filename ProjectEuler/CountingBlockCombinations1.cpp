@@ -1,3 +1,7 @@
+// https://github.com/DimitriChrysafis/DimiHero
+// https://www.dimitri.page/
+// https://dimitrichrysafis.wixsite.com/mysite
+// https://dimitric.weebly.com/
 #include <iostream>
 #include <string>
 #include <unistd.h>
