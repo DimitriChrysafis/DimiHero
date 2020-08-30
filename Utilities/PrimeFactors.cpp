@@ -36,6 +36,8 @@ int main (){
                   cout << endl;
                   return 0;
               }
+         cout << "One prime factor is " << 1 << endl;
+    c++;
       while (p <= Number){
           d = 0;
           if(Number % p == 0){
@@ -48,12 +50,17 @@ int main (){
               }
               if(d == 2){
                   cout << "One prime factor is " << p << endl;
-                      this_thread::sleep_for(chrono::milliseconds(10) );
                   c++;
               }
           }
           p++;
       }
+    cout << "One prime factor is " << Number << endl;
+    c++;
+    if( c > 2){
     cout << "there are " << c << " prime factors" << endl;
+    }else{
+        cout << c << " is prime!!!!!!!";
+    }
 }
 
