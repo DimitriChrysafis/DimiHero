@@ -1,0 +1,77 @@
+
+.grid-header .grid-header-tabs .selector a {
+   background: linear-gradient(to bottom, #00f, #20ffec); box-shadow: none!important;
+    border-radius: 15px;
+}
+.grid-bg-default {
+    border-radius: 15px;
+}
+.btn-primary {
+      background: linear-gradient(to bottom, #f00, #ff20bc); box-shadow: none!important;
+}
+.btn-primary {
+    background-color: #fdc5cb;
+}
+.faux-link, a {
+    color: linear-gradient(to bottom, #f00, #ff20bc); box-shadow: none!important;
+}
+.academy .left-navigation #side-column {
+      background-color: #fdc5cb;
+}
+.grey-panel .header {
+    background: linear-gradient(to bottom, #0026ff, #00addd); box-shadow: none!important;
+}
+.aops-rogb-blue {
+           background: linear-gradient(to bottom, #005eff, #204dff70); box-shadow: none!important;
+    border-radius: 15px;
+}
+.aops-rogb-green {
+             background: linear-gradient(to bottom, #00ff4c, #20ffb8ad); box-shadow: none!important;
+    border-radius: 15px;
+}
+table.grid-schedule tr td, table.grid-schedule tr th {
+    border: 1px solid #2196F3;
+}
+#grid {
+    color: #005b1c;
+}
+.grid-detail {
+  background: linear-gradient(to bottom, #3c00ff, #ff209300); box-shadow: none!important;
+    border-radius: 15px;
+}
+.grid-btn.btn-video-meeting {
+    background: linear-gradient(to bottom, #f00, #ff2093ad); box-shadow: none!important;
+    border-radius: 15px;
+}
+.infobar {
+ background: linear-gradient(to bottom, #005eff, #00addd); box-shadow: none!important;
+}
+
+.grid-bg-light-green {
+    background: rgb(64, 0, 255) !important;
+    border-radius: 150px;
+}
+
+.grid-bg-default {
+    background: rgb(255, 0, 183) !important;
+    border-radius: 150px;
+}
+
+.cmty-topic-cell {
+background: linear-gradient(to bottom, #00ffd0, #2054ff80); box-shadow: none!important;
+}
+
+#grid {
+    color: #E91E63;
+}
+.grid-bg-blue {
+    border-radius: 15343px;
+}
+#breadcrumbs-wrapper, .academy #side-column {
+    background: linear-gradient(to bottom, #008cff, #00addd); box-shadow: none!important;
+}
+.problem-header {
+  background: #000aff;
+    border-radius: 150px;
+}
+
