@@ -4,31 +4,34 @@ tell application "System Events"
 	set texttosay to the text returned of the result
 	repeat
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
 		keystroke return
 		keystroke texttosay
-		delay 4
+		delay 0.7
+		keystroke return
+		keystroke texttosay
+		delay 0.7
 		keystroke return
 		display dialog the "Do you want to quit?" buttons {"Continue", "Quit"} default button 1
 		if the button returned of the result is "Quit" then
