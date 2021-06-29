@@ -1,0 +1,999 @@
+let Discord;
+let Database;
+if (typeof window !== "undefined") {
+    Discord = DiscordJS;
+    Database = EasyDatabase;
+} else {
+    Discord = require("discord.js");
+    Database = require("easy-json-database");
+}
+const delay = (ms) => new Promise((resolve) => setTimeout(() => resolve(), ms));
+const s4d = {
+    Discord,
+    client: null,
+    tokenInvalid: false,
+    reply: null,
+    joiningMember: null,
+    database: new Database("./db.json"),
+    checkMessageExists() {
+        if (!s4d.client) throw new Error('You cannot perform message operations without a Discord.js client')
+        if (!s4d.client.readyTimestamp) throw new Error('You cannot perform message operations while the bot is not connected to the Discord API')
+    }
+};
+s4d.client = new s4d.Discord.Client({
+    fetchAllMembers: true
+});
+s4d.client.on('raw', async (packet) => {
+    if (['MESSAGE_REACTION_ADD', 'MESSAGE_REACTION_REMOVE'].includes(packet.t)) {
+        const guild = s4d.client.guilds.cache.get(packet.d.guild_id);
+        if (!guild) return;
+        const member = guild.members.cache.get(packet.d.user_id) || guild.members.fetch(d.user_id).catch(() => {});
+        if (!member) return;
+        const channel = s4d.client.channels.cache.get(packet.d.channel_id);
+        if (!channel) return;
+        const message = channel.messages.cache.get(packet.d.message_id) || await channel.messages.fetch(packet.d.message_id).catch(() => {});
+        if (!message) return;
+        s4d.client.emit(packet.t, guild, channel, message, member, packet.d.emoji.name);
+    }
+});
+var arguments2, farmTim, command, farmRand, farmCount, Add1, Add2, Mult1, Add3, Mult2, Div1, Mult3, Div2, Div3;
+
+function colourRandom() {
+    var num = Math.floor(Math.random() * Math.pow(2, 24));
+    return '#' + ('00000' + num.toString(16)).substr(-6);
+}
+
+function mathRandomInt(a, b) {
+    if (a > b) {
+        // Swap a and b to ensure a is smaller.
+        var c = a;
+        a = b;
+        b = c;
+    }
+    return Math.floor(Math.random() * (b - a + 1) + a);
+}
+
+
+s4d.client.login('Haha you thought you would get the token!').catch((e) => {
+    s4d.tokenInvalid = true;
+    s4d.tokenError = e;
+});
+
+s4d.client.on('message', async (s4dmessage) => {
+    if ((String((s4dmessage.content)).includes(String('amazn'))) || (String((s4dmessage.content)).includes(String('Amazn'))) || (String((s4dmessage.content)).includes(String('@Amazn'))) || (String((s4dmessage.content)).includes(String('Amzn'))) || (String((s4dmessage.content)).includes(String('amazon'))) || (String((s4dmessage.content)).includes(String('Booster'))) || (String((s4dmessage.content)).includes(String('booster'))) || (String((s4dmessage.content)).includes(String('boost')))) {
+        (((s4dmessage.guild).members.cache.get('797267055580807168') || await (s4dmessage.guild).members.fetch('797267055580807168'))).send({
+            embed: {
+                title: '```Alert!```',
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: (String(s4dmessage.member) + String(' mentioned a keyword; he said: ' + String(String('`' + String(String(s4dmessage.content) + '`')) + String('\n' + String('Here is the exact text:' + String(' https://discord.com/channels/' + String(String((s4dmessage.guild || {}).id) + String('/' + String(String((s4dmessage.channel || {}).id) + String('/' + String(s4dmessage.id))))))))))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+    }
+    if ((s4dmessage.content) == 'v.members') {
+        s4dmessage.channel.send({
+            embed: {
+                title: null,
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: ('We have ' + String(String((s4dmessage.guild).memberCount) + ' members. **POG**')),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+    }
+    if ((s4dmessage.content) == 'v.join') {
+        s4dmessage.channel.send({
+            embed: {
+                title: '**Pubstomper**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: (String('KDR: 3.5+ ' + '\n') + String(String('KPG: 15+' + '\n') + String('LEVEL: 60+' + String('\n' + 'Over 100k score per week')))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: 'https://images-ext-1.discordapp.net/external/R1xIdjlKYV_FB4sUbjBPQWqSkrEOYQx6EaBeevdVC-4/https/mir-s3-cdn-cf.behance.net/projects/404/894598108479039.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png'
+                }
+
+            }
+        });
+        s4dmessage.channel.send({
+            embed: {
+                title: '**Clan War**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: (String('Level 30+' + '\n') + String(String('1700+ kills 3h Contract' + '\n') + 'Proof Needed')),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: 'https://images-ext-2.discordapp.net/external/bC5jNfpOWYzQ-kTz5tw0kagMTXgzi4s0Siw1CtJOyvk/https/mir-s3-cdn-cf.behance.net/projects/404/ec5b64108332641.Y3JvcCwxMDgwLDg0NCwwLDExNw.png'
+                }
+
+            }
+        });
+        s4dmessage.channel.send({
+            embed: {
+                title: '**Twitch:**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: (String('Level 30+' + '\n') + String(String('4+ Avg Viewers' + '\n') + '200+ Followers')),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: 'https://images-ext-1.discordapp.net/external/nReKePf-6CqyIq9DA4Z4VKXXa22wSPnO71xTh-UQoVY/https/icons.iconarchive.com/icons/papirus-team/papirus-apps/256/gnome-twitch-icon.png'
+                }
+
+            }
+        });
+        s4dmessage.channel.send({
+            embed: {
+                title: '**Youtube:**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: (String('Level 30+' + '\n') + String(String('200+ subs' + '\n') + '400+ views per video')),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: 'https://images-ext-1.discordapp.net/external/ER73ATl4Q58PCSwvJwSZKtJOOHxXKAHkIza-GD-FuK8/%3Fv%3D1/https/cdn.discordapp.com/emojis/670622703384002602.png'
+                }
+
+            }
+        });
+    }
+    if ((s4dmessage.content) == 'v.time') {
+        s4dmessage.channel.send(String('THIS IS ALL PST'));
+        s4dmessage.channel.send(String(('Day of the month:' + String((new Date().getDate())))));
+        s4dmessage.channel.send(String(('Day of the week:' + String((new Date().getDay())))));
+        s4dmessage.channel.send(String(('Current hour:' + String((new Date().getHours())))));
+        s4dmessage.channel.send(String(('Current minute:' + String((new Date().getMinutes())))));
+    }
+    if ((s4dmessage.content) == 'v.ping') {
+        s4dmessage.channel.send({
+            embed: {
+                title: null,
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: 'pong! check your dms',
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send(String((s4d.client.ws.ping)));
+        (s4dmessage.member).send(String('is the current latency'));
+    }
+    if ((s4dmessage.content) == 'v.spam_me') {
+        s4dmessage.channel.send({
+            embed: {
+                title: null,
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: 'ok ima spam you, check dms',
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send(String('This will happen 10 times'));
+        for (var count = 0; count < 10; count++) {
+            (s4dmessage.member).send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: 'SPAMMMM',
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        }
+    }
+    if ((s4dmessage.content) == 'v.addition' || (s4dmessage.content) == 'v.add') {
+        Add1 = mathRandomInt(0, 100);
+        Add2 = mathRandomInt(0, 100);
+        Add3 = Add2 + Add1;
+        (s4dmessage.channel).send({
+            embed: {
+                title: '**Your problem: **',
+                color: '#3333ff',
+                image: {
+                    url: null
+                },
+
+                description: (String(Add2) + String(' + ' + String(Add1))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.channel).awaitMessages((m) => m.author.id === (s4dmessage.member).id, {
+            time: (1 * 60 * 1000),
+            max: 1
+        }).then(async (collected) => {
+            s4d.reply = collected.first().content;
+            if ((s4d.reply) == Add3) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Correct**',
+                        color: '#33cc00',
+                        image: {
+                            url: null
+                        },
+
+                        description: 'Nice!',
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+            if ((s4d.reply) != Add3) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Wrong**',
+                        color: '#ff0000',
+                        image: {
+                            url: null
+                        },
+
+                        description: ('Correct answer:' + String(Add3)),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+
+            s4d.reply = null;
+        }).catch(async (e) => {
+            console.error(e);
+            s4dmessage.channel.send({
+                embed: {
+                    title: '**No Answer**',
+                    color: '#ff0000',
+                    image: {
+                        url: null
+                    },
+
+                    description: (String(s4dmessage.member) + ' did not answer in time.'),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        });
+    }
+    if ((s4dmessage.content) == 'v.mult' || (s4dmessage.content) == 'v.multiply' || (s4dmessage.content) == 'v.multiplication') {
+        Mult1 = mathRandomInt(0, 15);
+        Mult2 = mathRandomInt(0, 20);
+        Mult3 = Mult1 * Mult2;
+        (s4dmessage.channel).send({
+            embed: {
+                title: '**Your problem: **',
+                color: '#3333ff',
+                image: {
+                    url: null
+                },
+
+                description: (String(Mult1) + String('*' + String(Mult2))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.channel).awaitMessages((m) => m.author.id === (s4dmessage.member).id, {
+            time: (1 * 60 * 1000),
+            max: 1
+        }).then(async (collected) => {
+            s4d.reply = collected.first().content;
+            if ((s4d.reply) == Mult3) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Correct**',
+                        color: '#33cc00',
+                        image: {
+                            url: null
+                        },
+
+                        description: 'Nice!',
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+            if ((s4d.reply) != Mult3) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Wrong**',
+                        color: '#ff0000',
+                        image: {
+                            url: null
+                        },
+
+                        description: ('Correct answer: ' + String(Mult3)),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+
+            s4d.reply = null;
+        }).catch(async (e) => {
+            console.error(e);
+            s4dmessage.channel.send({
+                embed: {
+                    title: '**No Answer**',
+                    color: '#ff0000',
+                    image: {
+                        url: null
+                    },
+
+                    description: (String(s4dmessage.member) + ' did not answer in time.'),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        });
+    }
+    if ((s4dmessage.content) == 'v.division' || (s4dmessage.content) == 'v.divide' || (s4dmessage.content) == 'v.div') {
+        Div1 = mathRandomInt(3, 10);
+        Div2 = mathRandomInt(5, 15);
+        Div3 = Div2 * Div1;
+        (s4dmessage.channel).send({
+            embed: {
+                title: '**Your problem: **',
+                color: '#3333ff',
+                image: {
+                    url: null
+                },
+
+                description: (String(Div3) + String('/' + String(Div2))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.channel).awaitMessages((m) => m.author.id === (s4dmessage.member).id, {
+            time: (1 * 60 * 1000),
+            max: 1
+        }).then(async (collected) => {
+            s4d.reply = collected.first().content;
+            if ((s4d.reply) == Div1) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Correct**',
+                        color: '#33cc00',
+                        image: {
+                            url: null
+                        },
+
+                        description: 'Nice!',
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+            if ((s4d.reply) != Div1) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: '**Wrong**',
+                        color: '#ff0000',
+                        image: {
+                            url: null
+                        },
+
+                        description: ('Correct answer: ' + String(Div1)),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+
+            s4d.reply = null;
+        }).catch(async (e) => {
+            console.error(e);
+            s4dmessage.channel.send({
+                embed: {
+                    title: '**No Answer**',
+                    color: '#ff0000',
+                    image: {
+                        url: null
+                    },
+
+                    description: (String(s4dmessage.member) + ' did not answer in time.'),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        });
+    }
+    if ((s4dmessage.content) == 'v.help') {
+        s4dmessage.react('👍');
+        s4dmessage.channel.send({
+            embed: {
+                title: '**Check your DMs!**',
+                color: '#33cc00',
+                image: {
+                    url: null
+                },
+
+                description: ('Make sure DMs are on ' + String(s4dmessage.member)),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send({
+            embed: {
+                title: '**Community Commands:**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: ('`v.help`' + String('\n' + String('`v.spam_me`' + String('\n' + String('`v.ping`' + String('\n' + String('`v.join`' + String('\n' + String('`v.time`' + String('\n' + '`v.members`')))))))))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send({
+            embed: {
+                title: '**Math Questions**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: ('`v.addition` or `v.add`' + String('\n' + String('`v.multiplication` or `v.mult`' + String('\n' + String('`v.division` or `v.div`' + '\n'))))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send({
+            embed: {
+                title: '**Mod Commands**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: ('`v.aft_user`' + String('\n' + String('`v.accept_user_full`' + String('\n' + String('`v.decline_user_full`' + '\n'))))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send({
+            embed: {
+                title: '**Vanta Currency**',
+                color: '#000000',
+                image: {
+                    url: null
+                },
+
+                description: ('`v.score`' + String('\n' + String('`v.farm`' + String('\n' + '`v.shop`')))),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+        (s4dmessage.member).send({
+            embed: {
+                title: '**Custom Commands**',
+                color: '#ff0000',
+                image: {
+                    url: null
+                },
+
+                description: 'Be the 1st one to get a custom command by DMing `Amazn#2730`.',
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+    }
+
+});
+
+s4d.client.on('ready', async () => {
+
+    while (s4d.client && s4d.client.token) {
+        await delay(50);
+        s4d.client.user.setActivity(String('v.help'));
+        await delay(Number(60) * 1000);
+        s4d.client.user.setActivity(String('with your mom'));
+        await delay(Number(60) * 1000);
+
+        console.log('ran')
+    }
+
+});
+
+s4d.client.on('message', async (s4dmessage) => {
+    if ((s4dmessage.content) == 'v.reset_time') {
+        farmTim = 0;
+        s4dmessage.react('👍');
+    }
+    if ((s4dmessage.content) == 'v.farm') {
+        if (farmTim > 0) {
+            s4dmessage.channel.send({
+                embed: {
+                    title: null,
+                    color: '#ff0000',
+                    image: {
+                        url: null
+                    },
+
+                    description: ('Bro chill ur on cooldown. Wait ' + String(String(farmTim) + ' seconds')),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        }
+        if (farmTim == 0) {
+            farmRand = mathRandomInt(-5, 10);
+            farmCount = (typeof farmCount == 'number' ? farmCount : 0) + farmRand;
+            if (farmRand >= 0) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: null,
+                        color: '#33cc00',
+                        image: {
+                            url: null
+                        },
+
+                        description: ('You gained ' + String(String(farmRand) + ' Vbucks')),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+            if (farmRand < 0) {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: null,
+                        color: '#ff0000',
+                        image: {
+                            url: null
+                        },
+
+                        description: ('You lost ' + String(String(farmRand) + ' Vbucks')),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+            farmTim = 5;
+            for (var count2 = 0; count2 < 5; count2++) {
+                await delay(Number(1) * 1000);
+                farmTim = (typeof farmTim == 'number' ? farmTim : 0) + -1;
+            }
+        }
+    }
+    if ((s4dmessage.content) == 'v.score') {
+        s4dmessage.channel.send({
+            embed: {
+                title: null,
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: ('You have ' + String(String(farmCount) + ' Vbucks.')),
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: null
+                }
+
+            }
+        });
+    }
+    if ((s4dmessage.content) == 'v.shop') {
+        s4dmessage.channel.send({
+            embed: {
+                title: '`SHOP`',
+                color: (colourRandom()),
+                image: {
+                    url: null
+                },
+
+                description: '`panda`: I am an agile beast who costs 3000 Vbucks and with me, there is only a 15% chance that you will lose Vbucks when you farm!',
+                footer: {
+                    text: null
+                },
+                thumbnail: {
+                    url: 'http://cdn.shopify.com/s/files/1/1061/1924/products/Panda_Face_Emoji_grande.png?v=1571606065'
+                }
+
+            }
+        });
+    }
+
+});
+
+s4d.client.on('message', async (s4dmessage) => {
+    arguments2 = (s4dmessage.content).split(' ');
+    command = arguments2.splice(0, 1)[0];
+    if ((s4dmessage.member).hasPermission('SEND_MESSAGES')) {
+        if (((s4dmessage.channel || {}).name) == '・testers-results' || ((s4dmessage.channel || {}).name) == '・results') {
+            if (command == 'v.aft_user') {
+                (s4dmessage.mentions.members.first()).send({
+                    embed: {
+                        title: null,
+                        color: (colourRandom()),
+                        image: {
+                            url: null
+                        },
+
+                        description: ('Your application to VNTA has been `accepted` by ' + String(String(String(s4dmessage.member) + '.') + String('\n' + String('\n' + String('Please DM a tester to continue the application process. ' + String('\n' + String('\n' + 'Don\'t know who to contact? Click here https://discord.com/channels/719946380285837322/848532015270854668/848533281480769546'))))))),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+                (s4dmessage.mentions.members.first()).roles.add((Array.prototype.concat.apply([], s4d.client.guilds.cache.array().map((g) => g.roles.cache.array())).find((role) => role.name === 'ApprovedForTesting')));
+                s4dmessage.channel.send({
+                    embed: {
+                        title: null,
+                        color: (colourRandom()),
+                        image: {
+                            url: null
+                        },
+
+                        description: 'Status: Done',
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+                s4d.client.channels.cache.get('845682302662344756').send({
+                    embed: {
+                        title: null,
+                        color: (colourRandom()),
+                        image: {
+                            url: null
+                        },
+
+                        description: (String('The user ' + String(String(s4dmessage.member) + 'allowed to user for testing:')) + String(s4dmessage.mentions.members.first())),
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+                s4dmessage.react('👍');
+            }
+        }
+    }
+    if ('753869126522503310' == (s4dmessage.author.id) || '436589830777077782' == (s4dmessage.author.id) || '671436261482823763' == (s4dmessage.author.id) || '660353231565619200' == (s4dmessage.author.id) || '482612710018908190' == (s4dmessage.author.id) || '504029508295196683' == (s4dmessage.author.id) || '671436261482823763' == (s4dmessage.author.id)) {
+        if (command == 'v.accept_user_full') {
+            (s4dmessage.mentions.members.first()).send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: 'Your application to VNTA has been accepted! Send a request and DM PDJ#0030 once you have done so. Please provide a screenshot of this message.',
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            s4dmessage.react('👍');
+            (s4dmessage.mentions.members.first()).roles.add((Array.prototype.concat.apply([], s4d.client.guilds.cache.array().map((g) => g.roles.cache.array())).get('845682299894628420')));
+            s4d.client.channels.cache.get('845682302662344756').send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: (String('The user ' + String(String(s4dmessage.member) + 'has been accepted into the clan by user:')) + String(s4dmessage.mentions.members.first())),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            s4dmessage.channel.send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: 'Status: Done',
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            s4dmessage.delete();
+            s4dmessage.channel.send(String('Message deleted to keep the command confidential.'));
+        }
+        if (command == 'v.decline_user_full') {
+            s4d.client.channels.cache.get('845682302662344756').send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: (String('The user ' + String(String(s4dmessage.member) + 'has declined this user:')) + String(s4dmessage.mentions.members.first())),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            (s4dmessage.mentions.members.first()).send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: ('You have been `declined` by' + String(s4dmessage.member)),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            s4dmessage.channel.send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: 'Status: Done',
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+            s4dmessage.react('👍');
+            s4dmessage.delete();
+            s4dmessage.channel.send(String('Message deleted to keep the command confidential.'));
+        }
+        if (command == 'v.say') {
+            s4dmessage.delete();
+            s4dmessage.channel.send({
+                embed: {
+                    title: null,
+                    color: (colourRandom()),
+                    image: {
+                        url: null
+                    },
+
+                    description: (arguments2.join(' ')),
+                    footer: {
+                        text: null
+                    },
+                    thumbnail: {
+                        url: null
+                    }
+
+                }
+            });
+        }
+        if (command == 'v.aft_user') {
+            if (((s4dmessage.channel || {}).name) != '・testers-results' || ((s4dmessage.channel || {}).name) != '・results') {
+                s4dmessage.channel.send({
+                    embed: {
+                        title: null,
+                        color: (colourRandom()),
+                        image: {
+                            url: null
+                        },
+
+                        description: 'Wrong Channel, this only works in `Testers Results` or `Results`',
+                        footer: {
+                            text: null
+                        },
+                        thumbnail: {
+                            url: null
+                        }
+
+                    }
+                });
+            }
+        }
+    }
+
+});
+
+s4d;
